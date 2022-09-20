@@ -1,7 +1,7 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
-import { IconKeranjang } from '../../../assets'
-import { colors } from '../../../utils'
+import { IconKeranjang } from '../../assets'
+import { colors } from '../../utils'
 
 const Tombol = ({icon, totalKeranjang, padding}) => {
 

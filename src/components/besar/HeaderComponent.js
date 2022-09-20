@@ -1,8 +1,8 @@
 import { StyleSheet, View, TextInput } from 'react-native';
 import React, { Component } from 'react';
-import { colors, fonts, responsiveHeight } from '../../../utils';
-import { IconCari } from '../../../assets';
-import { Jarak, Tombol } from '../../kecil';
+import { colors, fonts, responsiveHeight } from '../../utils';
+import { IconCari } from '../../assets';
+import { Jarak, Tombol } from '../kecil';
 
 export default class HeaderComponent extends Component {
   render() {

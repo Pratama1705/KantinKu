@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Text, StyleSheet, View } from 'react-native';
-import { Logo } from '../../assets'
-import { colors } from '../../utils';
+import { Logo } from '../assets'
+import { colors } from '../utils';
 
 export default class Splash extends Component {
 
