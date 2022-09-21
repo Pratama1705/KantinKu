@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     text: (isFocused) => ({
-        color: isFocused ? colors.white : colors.secondary,
+        color: isFocused ? colors.white : colors.black,
         fontSize: 11,
         marginTop : 4,
         fontFamily: fonts.primary.bold

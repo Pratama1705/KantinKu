@@ -1,9 +1,10 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
-import { IconKeranjang } from '../../assets'
-import { colors } from '../../utils'
+import { IconKeranjang } from '../../../assets'
+import { colors } from '../../../utils'
+import TextOnly from './TextOnly'
 
-const Tombol = ({icon, totalKeranjang, padding}) => {
+const Tombol = (props) => {
 
   const Icon = () => {
     if(icon === 'keranjang') {
@@ -11,8 +12,14 @@ const Tombol = ({icon, totalKeranjang, padding}) => {
     }
     return <IconKeranjang/>
   }
+
+  const {icon, totalKeranjang, padding, type, onPress} = props;
+
+  if(type === "text") {
+    return <TextOnly {...props}/>
+  }
   return (
-    <TouchableOpacity style={styles.container(padding)}>
+    <TouchableOpacity style={styles.container(padding)} onPress={onPress}>
       <Icon/>
 
       {totalKeranjang && (
