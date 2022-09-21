@@ -6,6 +6,8 @@ import IconProfileAktif from './profile-aktif.svg';
 import IconProfile from './profile.svg';
 import IconCari from './search.svg';
 import IconKeranjang from './shopping-cart.svg';
+import IconKeranjangAktif from './shoppingcart-aktif.svg';
+import IconBack from './arrow-left.svg';
 
 export {
     IconHome,
@@ -15,5 +17,7 @@ export {
     IconProfile,
     IconProfileAktif,
     IconCari,
-    IconKeranjang
+    IconKeranjang,
+    IconKeranjangAktif,
+    IconBack,
 };
