@@ -6,6 +6,11 @@ import IconProfileAktif from './profile-aktif.svg';
 import IconProfile from './profile.svg';
 import IconCari from './search.svg';
 import IconKeranjang from './shopping-cart.svg';
+import IconArrowRight from './Arrow.svg';
+import IconChangePassword from './ChanPass.svg';
+import IconEditProfile from './EdiPro.svg';
+import IconHistoryPemesanan from './HisPes.svg';
+import IconSignOut from './Logout.svg';
 import IconKeranjangAktif from './shoppingcart-aktif.svg';
 import IconBack from './arrow-left.svg';
 
@@ -18,6 +23,11 @@ export {
     IconProfileAktif,
     IconCari,
     IconKeranjang,
+    IconArrowRight,
+    IconChangePassword,
+    IconEditProfile,
+    IconHistoryPemesanan,
+    IconSignOut
     IconKeranjangAktif,
     IconBack,
 };
