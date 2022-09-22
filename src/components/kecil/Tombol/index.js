@@ -1,14 +1,17 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
-import { IconKeranjang } from '../../../assets'
+import { IconBack, IconKeranjang } from '../../../assets'
 import { colors } from '../../../utils'
 import TextOnly from './TextOnly'
+import TextIcon from './TextIcon'
 
 const Tombol = (props) => {
 
   const Icon = () => {
     if(icon === 'keranjang') {
       return <IconKeranjang/>
+    }else if(icon === 'arrow-left') {
+      return <IconBack/>
     }
     return <IconKeranjang/>
   }
@@ -17,6 +20,8 @@ const Tombol = (props) => {
 
   if(type === "text") {
     return <TextOnly {...props}/>
+  }else if(type === "textIcon"){
+    return <TextIcon {...props}/>
   }
   return (
     <TouchableOpacity style={styles.container(padding)} onPress={onPress}>
