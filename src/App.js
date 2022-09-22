@@ -1,10 +1,10 @@
+/* eslint-disable prettier/prettier */
 // In App.js in a new project
 
 import * as React from 'react';
 
-import { NavigationContainer } from '@react-navigation/native';
+import {NavigationContainer} from '@react-navigation/native';
 import Router from './router';
-
 
 function App() {
   return (

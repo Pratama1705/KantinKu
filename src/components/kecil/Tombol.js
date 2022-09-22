@@ -1,38 +1,36 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React from 'react'
-import { IconKeranjang } from '../../assets'
-import { colors } from '../../utils'
+/* eslint-disable prettier/prettier */
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import React from 'react';
+import {IconKeranjang} from '../../assets';
+import {colors} from '../../utils';
 
 const Tombol = ({icon, totalKeranjang, padding}) => {
-
   const Icon = () => {
-    if(icon === 'keranjang') {
-      return <IconKeranjang/>
+    if (icon === 'keranjang') {
+      return <IconKeranjang />;
     }
-    return <IconKeranjang/>
-  }
+    return <IconKeranjang />;
+  };
   return (
     <TouchableOpacity style={styles.container(padding)}>
-      <Icon/>
+      <Icon />
 
       {totalKeranjang && (
         <View style={styles.notif}>
-          <Text style={styles.textNotif}>
-            {totalKeranjang}
-          </Text>
+          <Text style={styles.textNotif}>{totalKeranjang}</Text>
         </View>
       )}
     </TouchableOpacity>
-  )
-}
+  );
+};
 
-export default Tombol
+export default Tombol;
 
 const styles = StyleSheet.create({
-  container: (padding) => ({
+  container: padding => ({
     backgroundColor: colors.white,
     padding: padding,
-    borderRadius: 10
+    borderRadius: 10,
   }),
   notif: {
     position: 'absolute',
@@ -40,10 +38,10 @@ const styles = StyleSheet.create({
     right: 5,
     backgroundColor: 'red',
     borderRadius: 3,
-    padding: 3
+    padding: 3,
   },
   textNotif: {
     fontSize: 10,
-    color: colors.white
-  }
-})
+    color: colors.white,
+  },
+});
