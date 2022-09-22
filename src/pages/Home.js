@@ -31,7 +31,7 @@ export default class Home extends Component {
             <Text style={styles.label}>Menu Rekomendasi</Text>
             <ListMenu menus={menus} navigation={navigation} />
 
-            <Tombol title="Lihat Semua" type="text" padding={7}/>
+            <Tombol title="Lihat Semua" type="text" padding={7} onPress={() => navigation.navigate('Menu') }/>
           </View>
 
           <Jarak height={80} />

@@ -11,6 +11,7 @@ export const dummyMenu = [
             gambar: Mie,
         },
         harga: 15000,
+        deskripsi: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam et rhoncus elit. Praesent eu lobortis lectus, sit amet ultrices sem. Phasellus accumsan tellus vel ipsum euismod iaculis. Ut hendrerit, purus id pretium faucibus, diam lorem scelerisque sem, nec porttitor puru",
         ready: true
     },
     {
@@ -23,6 +24,7 @@ export const dummyMenu = [
             gambar: Mie,
         },
         harga: 15000,
+        deskripsi: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam et rhoncus elit. Praesent eu lobortis lectus, sit amet ultrices sem. Phasellus accumsan tellus vel ipsum euismod iaculis. Ut hendrerit, purus id pretium faucibus, diam lorem scelerisque sem, nec porttitor puru",
         ready: true
     },
     {
@@ -35,6 +37,7 @@ export const dummyMenu = [
             gambar: Nasi,
         },
         harga: 15000,
+        deskripsi: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam et rhoncus elit. Praesent eu lobortis lectus, sit amet ultrices sem. Phasellus accumsan tellus vel ipsum euismod iaculis. Ut hendrerit, purus id pretium faucibus, diam lorem scelerisque sem, nec porttitor puru",
         ready: true
     },
     {
@@ -47,6 +50,7 @@ export const dummyMenu = [
             gambar: Nasi,
         },
         harga: 15000,
+        deskripsi: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam et rhoncus elit. Praesent eu lobortis lectus, sit amet ultrices sem. Phasellus accumsan tellus vel ipsum euismod iaculis. Ut hendrerit, purus id pretium faucibus, diam lorem scelerisque sem, nec porttitor puru",
         ready: true
     },
     {
@@ -59,6 +63,7 @@ export const dummyMenu = [
             gambar: Minuman,
         },
         harga: 5000,
+        deskripsi: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam et rhoncus elit. Praesent eu lobortis lectus, sit amet ultrices sem. Phasellus accumsan tellus vel ipsum euismod iaculis. Ut hendrerit, purus id pretium faucibus, diam lorem scelerisque sem, nec porttitor puru",
         ready: true
     },
     {
@@ -71,6 +76,7 @@ export const dummyMenu = [
             gambar: Minuman,
         },
         harga: 5000,
+        deskripsi: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam et rhoncus elit. Praesent eu lobortis lectus, sit amet ultrices sem. Phasellus accumsan tellus vel ipsum euismod iaculis. Ut hendrerit, purus id pretium faucibus, diam lorem scelerisque sem, nec porttitor puru",
         ready: true
     },
     

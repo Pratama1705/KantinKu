@@ -17,6 +17,7 @@ export default class Menu extends Component {
 
   render() {
     const { kategori, menus } = this.state
+    const { navigation } = this.props
     return (
       <View style={styles.page}>
         <HeaderComponent />
@@ -27,7 +28,7 @@ export default class Menu extends Component {
           </View>
           <View style={styles.pilihMenu}>
             <Text style={styles.label}>Pilih <Text style={styles.boldLabel}>Menu</Text> Yang Anda Inginkan</Text>
-            <ListMenu menus={menus} />
+            <ListMenu menus={menus} navigation={navigation} />
           </View>
 
           <Jarak height={80} />
