@@ -3,7 +3,7 @@ import React from 'react'
 import { IconArrowRight } from '../../assets'
 import { colors, fonts, responsiveHeight } from '../../utils'
 
-const CardMenu = ({ menu }) => {
+const CardMenuProfile = ({ menu }) => {
     return (
         <View style={styles.container}>
             <View style={styles.menu}>
@@ -15,7 +15,7 @@ const CardMenu = ({ menu }) => {
     )
 }
 
-export default CardMenu
+export default CardMenuProfile
 
 const styles = StyleSheet.create({
     container: {

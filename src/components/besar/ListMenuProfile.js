@@ -1,12 +1,12 @@
 import { View } from 'react-native'
 import React from 'react'
-import { CardMenu } from '../kecil'
+import { CardMenuProfile } from '../kecil'
 
 const ListMenuProfile = ({menus}) => {
   return (
     <View>
       {menus.map((menu) => {
-        return <CardMenu menu= {menu} key={menu.id} />
+        return <CardMenuProfile menu= {menu} key={menu.id} />
       })}
     </View>
   )

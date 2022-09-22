@@ -1,7 +1,7 @@
 import React from "react";
 import {IconChangePassword, IconEditProfile, IconHistoryPemesanan, IconSignOut} from "../assets/icons";
 
-export const dummyMenu = [
+export const dummyMenuProfile = [
     {
         id : 1,
         nama: "Edit Profile",

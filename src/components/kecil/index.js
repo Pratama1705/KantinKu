@@ -1,6 +1,6 @@
 import Tombol from './Tombol';
 import Jarak from './Jarak';
 import CardKategori from './CardKategori';
-import CardMenu from './CardMenu'
+import CardMenuProfile from './CardMenuProfile'
 
-export { Tombol, Jarak, CardKategori, CardMenu }
+export { Tombol, Jarak, CardKategori, CardMenuProfile }

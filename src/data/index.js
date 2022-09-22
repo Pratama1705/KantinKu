@@ -1,3 +1,3 @@
 export * from './dummyKategori'
 export * from './dummyProfile';
-export * from './dummyMenu'
+export * from './dummyMenuProfile'

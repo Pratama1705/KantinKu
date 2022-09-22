@@ -1,7 +1,7 @@
 import { Text, StyleSheet, Image, View } from 'react-native'
 import React, { Component } from 'react'
 import { colors, fonts, responsiveHeight, responsiveWidth } from '../utils'
-import { dummyProfile, dummyMenu } from '../data'
+import { dummyProfile, dummyMenuProfile } from '../data'
 import {RFValue} from "react-native-responsive-fontsize";
 import { heightMobileUI } from '../utils/constant';
 import { ListMenuProfile } from '../components';
@@ -12,7 +12,7 @@ export default class Profile extends Component {
   
     this.state = {
        profile: dummyProfile,
-       menus: dummyMenu
+       menus: dummyMenuProfile
     }
   }
   render() {
