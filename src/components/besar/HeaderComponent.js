@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   input: {
-    fontSize: 16,
+    fontSize: 14,
     fontFamily: fonts.primary.regular
   }
 })

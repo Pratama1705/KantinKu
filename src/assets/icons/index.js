@@ -11,6 +11,8 @@ import IconChangePassword from './ChanPass.svg';
 import IconEditProfile from './EdiPro.svg';
 import IconHistoryPemesanan from './HisPes.svg';
 import IconSignOut from './Logout.svg';
+import IconKeranjangAktif from './shoppingcart-aktif.svg';
+import IconBack from './arrow-left.svg';
 
 export {
     IconHome,
@@ -26,4 +28,6 @@ export {
     IconEditProfile,
     IconHistoryPemesanan,
     IconSignOut
+    IconKeranjangAktif,
+    IconBack,
 };

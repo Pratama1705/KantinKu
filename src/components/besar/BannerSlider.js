@@ -1,6 +1,6 @@
 import { StyleSheet, View } from 'react-native'
 import React, { Component } from 'react'
-import { Slider1, Slider2 } from '../../assets'
+import { Slider1, Slider2, Slider3 } from '../../assets'
 import { SliderBox } from "react-native-image-slider-box"
 import { colors, responsiveHeight, responsiveWidth } from '../../utils'
 
@@ -9,7 +9,7 @@ export default class BannerSlider extends Component {
         super(props)
 
         this.state = {
-            images: [Slider1, Slider2]
+            images: [Slider1, Slider2, Slider3]
         }
     }
     render() {
@@ -30,7 +30,7 @@ export default class BannerSlider extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        marginTop:-10,
+        marginTop:5,
     },
     slider: {
         borderRadius: 10,

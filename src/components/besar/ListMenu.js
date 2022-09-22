@@ -1,25 +1,26 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import { CardKategori } from '../kecil'
+import { CardMenu } from '../kecil'
 
-const ListKategori = ({kategori}) => {
+const ListMenu = ({ menus, navigation }) => {
   return (
     <View style={styles.container}>
-      {kategori.map((kat) => {
+      {menus.map((menu) => {
         return (
-          <CardKategori kat={kat} key={kat.id}/>
+          <CardMenu key={menu.id} menu={menu} navigation={navigation}/>
         )
       })}
     </View>
   )
 }
 
-export default ListKategori
+export default ListMenu
 
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
+    flexWrap: 'wrap',
     justifyContent: 'space-between',
-    marginTop: 10,
+    marginTop: 10
   }
 })
