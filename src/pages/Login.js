@@ -7,6 +7,7 @@ import {
   Pressable,
   Image,
 } from 'react-native';
+import {responsiveHeight, responsiveWidth} from '../utils';
 import MyImage from '../assets/images/logo.png';
 
 export default class Login extends Component {
@@ -17,9 +18,9 @@ export default class Login extends Component {
         <Text style={stylesLogin.text}>KantinKu</Text>
         <View style={stylesLogin.view}>
           <Text style={stylesLogin.text1}>Email :</Text>
-          <TextInput style={stylesLogin.input1} />
+          <TextInput style={stylesLogin.input} />
           <Text style={stylesLogin.text2}>Password :</Text>
-          <TextInput style={stylesLogin.input2} />
+          <TextInput style={stylesLogin.input} />
           <Pressable
             style={stylesLogin.button}
             onPress={() => {
@@ -41,22 +42,22 @@ export default class Login extends Component {
 
 const stylesLogin = StyleSheet.create({
   image: {
-    width: 96,
-    height: 96,
+    width: responsiveWidth(96),
+    height: responsiveHeight(96),
     marginLeft: 150,
     marginTop: 20,
   },
   text: {
-    marginLeft: 129,
+    marginLeft: responsiveWidth(129),
     fontSize: 36,
     fontWeight: 'bold',
     color: '#FFA500',
     marginTop: 0,
   },
   view: {
-    marginLeft: 30,
-    marginRight: 30,
-    marginTop: 20,
+    marginLeft: responsiveWidth(30),
+    marginRight: responsiveWidth(30),
+    marginTop: responsiveWidth(20),
     borderWidth: 0,
     borderRadius: 20,
     shadowColor: 'black',
@@ -71,7 +72,7 @@ const stylesLogin = StyleSheet.create({
     marginBottom: 6,
     marginTop: 43,
   },
-  input1: {
+  input: {
     borderWidth: 1,
     marginLeft: 29,
     marginRight: 29,
@@ -81,12 +82,6 @@ const stylesLogin = StyleSheet.create({
     marginLeft: 29,
     marginBottom: 6,
     marginTop: 28,
-  },
-  input2: {
-    borderWidth: 1,
-    marginLeft: 29,
-    marginRight: 29,
-    borderRadius: 5,
   },
   button: {
     backgroundColor: '#FFA500',
@@ -102,12 +97,12 @@ const stylesLogin = StyleSheet.create({
     color: 'white',
     fontSize: 18,
     fontWeight: 'bold',
-    marginLeft: 118,
-    marginTop: 10,
+    marginLeft: responsiveWidth(118),
+    marginTop: responsiveWidth(10),
   },
   view2: {
-    marginLeft: 125,
-    marginTop: 30,
+    marginLeft: responsiveWidth(125),
+    marginTop: responsiveWidth(30),
   },
   text4: {
     color: 'black',
@@ -119,6 +114,6 @@ const stylesLogin = StyleSheet.create({
     color: 'black',
     fontWeight: 'bold',
     fontSize: 15,
-    marginLeft: 20,
+    marginLeft: responsiveWidth(20),
   },
 });
