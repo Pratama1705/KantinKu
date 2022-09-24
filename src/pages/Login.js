@@ -31,7 +31,10 @@ export default class Login extends Component {
         </View>
         <View style={stylesLogin.view2}>
           <Text style={stylesLogin.text4}>Belum Punya Akun ?</Text>
-          <Pressable>
+          <Pressable
+            onPress={() => {
+              this.props.navigation.navigate('Register');
+            }}>
             <Text style={stylesLogin.text5}>Klik Untuk Daftar</Text>
           </Pressable>
         </View>
