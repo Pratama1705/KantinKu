@@ -1,6 +1,6 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
-import { IconBack, IconKeranjang, IconKeranjangAktif } from '../../../assets'
+import { IconBack, IconKeranjang, IconKeranjangAktif, IconSubmit } from '../../../assets'
 import { colors, fonts } from '../../../utils'
 
 const TextIcon = ({ icon, padding, onPress, title, fontSize }) => {
@@ -12,6 +12,8 @@ const TextIcon = ({ icon, padding, onPress, title, fontSize }) => {
             return <IconBack />
         } else if (icon === 'shoppingcart-aktif') {
             return <IconKeranjangAktif />
+        } else if (icon === 'submit') {
+            return <IconSubmit />
         }
         return <IconKeranjang />
     }

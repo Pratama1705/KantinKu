@@ -1,17 +1,17 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { IconArrowRight } from '../../assets'
 import { colors, fonts, responsiveHeight } from '../../utils'
 
-const CardMenuProfile = ({ menu }) => {
+const CardMenuProfile = ({ menu, navigation }) => {
     return (
-        <View style={styles.container}>
+        <TouchableOpacity style={styles.container} onPress={() => navigation.navigate(menu.halaman)}>
             <View style={styles.menu}>
                 {menu.gambar}
                 <Text style={styles.text}>{menu.nama}</Text>
             </View>
             <IconArrowRight />
-        </View>
+        </TouchableOpacity>
     )
 }
 

@@ -20,7 +20,7 @@ export default class Home extends Component {
     const { navigation } = this.props;
     return (
       <View style={styles.page}>
-        <HeaderComponent />
+        <HeaderComponent navigation={navigation}/>
         <ScrollView>
           <BannerSlider />
           <View style={styles.pilihKategori}>

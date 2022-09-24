@@ -6,6 +6,7 @@ import { Jarak, Tombol } from '../kecil';
 
 export default class HeaderComponent extends Component {
   render() {
+    const {navigation} = this.props
     return (
       <View style={styles.container}>
         <View style={styles.wrapperHeader}>
@@ -16,7 +17,7 @@ export default class HeaderComponent extends Component {
             <TextInput placeholder='Cari Jajanan...' style={styles.input} />
           </View>
           <Jarak width={10}/>
-          <Tombol icon='keranjang' totalKeranjang={2} padding={10} />
+          <Tombol icon='keranjang' totalKeranjang={2} padding={10} onPress={() => navigation.navigate('Keranjang')}/>
 
         </View>
       </View>

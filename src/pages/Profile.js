@@ -26,7 +26,7 @@ export default class Profile extends Component {
               <Text style={styles.Hp}>No. HP : {profile.nomerHP}</Text>
             </View>
 
-            <ListMenuProfile menus={menus} />
+            <ListMenuProfile menus={menus} navigation={this.props.navigation} />
           </View>
       </View>
     );
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
   container: {
     position: 'absolute',
     bottom: 0,
-    height: responsiveHeight(620),
+    height: responsiveHeight(680),
     width: '100%',
     backgroundColor: colors.white,
     borderTopRightRadius: 40,

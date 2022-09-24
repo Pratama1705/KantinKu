@@ -1,6 +1,6 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
-import { IconBack, IconKeranjang } from '../../../assets'
+import { IconBack, IconKeranjang, IconSubmit } from '../../../assets'
 import { colors } from '../../../utils'
 import TextOnly from './TextOnly'
 import TextIcon from './TextIcon'
@@ -12,6 +12,8 @@ const Tombol = (props) => {
       return <IconKeranjang/>
     }else if(icon === 'arrow-left') {
       return <IconBack/>
+    } else if (icon === 'submit') {
+      return <IconSubmit />
     }
     return <IconKeranjang/>
   }

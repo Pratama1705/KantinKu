@@ -18,9 +18,10 @@ export default class Menu extends Component {
   render() {
     const { kategori, menus } = this.state
     const { navigation } = this.props
+
     return (
       <View style={styles.page}>
-        <HeaderComponent />
+        <HeaderComponent navigation={navigation}/>
         <ScrollView>
           <View style={styles.pilihKategori}>
             <Text style={styles.label}>Pilih Kategori</Text>
