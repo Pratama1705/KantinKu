@@ -27,7 +27,7 @@ export {
     IconChangePassword,
     IconEditProfile,
     IconHistoryPemesanan,
-    IconSignOut
+    IconSignOut,
     IconKeranjangAktif,
     IconBack,
 };
