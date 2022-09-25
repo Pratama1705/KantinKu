@@ -13,6 +13,8 @@ import IconHistoryPemesanan from './HisPes.svg';
 import IconSignOut from './Logout.svg';
 import IconKeranjangAktif from './shoppingcart-aktif.svg';
 import IconBack from './arrow-left.svg';
+import IconSubmit from './Submit.svg';
+import IconSampah from './Sampah.svg';
 
 export {
     IconHome,
@@ -30,4 +32,6 @@ export {
     IconSignOut,
     IconKeranjangAktif,
     IconBack,
+    IconSubmit,
+    IconSampah
 };

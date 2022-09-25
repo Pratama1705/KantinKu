@@ -23,7 +23,7 @@ export const dummyMenu = [
             nama: "Mie",
             gambar: Mie,
         },
-        harga: 15000,
+        harga: 20000,
         deskripsi: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam et rhoncus elit. Praesent eu lobortis lectus, sit amet ultrices sem. Phasellus accumsan tellus vel ipsum euismod iaculis. Ut hendrerit, purus id pretium faucibus, diam lorem scelerisque sem, nec porttitor puru",
         ready: true
     },
@@ -36,7 +36,7 @@ export const dummyMenu = [
             nama: "Nasi",
             gambar: Nasi,
         },
-        harga: 15000,
+        harga: 25000,
         deskripsi: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam et rhoncus elit. Praesent eu lobortis lectus, sit amet ultrices sem. Phasellus accumsan tellus vel ipsum euismod iaculis. Ut hendrerit, purus id pretium faucibus, diam lorem scelerisque sem, nec porttitor puru",
         ready: true
     },
