@@ -10,18 +10,16 @@ const CardHistory = ({ pesanan }) => {
             {pesanan.pesanans.map((history, index) => {
                 return (
                     <View key={index} style={styles.history}>
-                        <Text>
-                            <Text style={styles.textBold}>{index + 1}.</Text>
-                            <Image source={history.product.gambar} style={styles.gambar} />
-                            <View style={styles.deskripsi}>
-                                <Text style={styles.nama}>{history.product.nama}</Text>
-                                <Text style={styles.harga}>Rp. {numberWithCommas(history.product.harga)}</Text>
+                        <Text style={styles.textBold}>{index + 1}.</Text>
+                        <Image source={history.product.gambar} style={styles.gambar} />
+                        <View style={styles.deskripsi}>
+                            <Text style={styles.nama}>{history.product.nama}</Text>
+                            <Text style={styles.harga}>Rp. {numberWithCommas(history.product.harga)}</Text>
 
-                                <Jarak height={10}></Jarak>
-                                <Text style={styles.textBold}>Pesanan: {history.product.jumlahPesan}</Text>
-                                <Text style={styles.textBold}>Rp. {numberWithCommas(history.totalHarga)}</Text>
-                            </View>
-                        </Text>
+                            <Jarak height={10}></Jarak>
+                            <Text style={styles.textBold}>Pesanan : {history.jumlahPesan}</Text>
+                            <Text style={styles.textBold}>Total Harga : Rp. {numberWithCommas(history.totalHarga)}</Text>
+                        </View>
                     </View>
                 )
             })}
@@ -65,8 +63,8 @@ const styles = StyleSheet.create({
         marginTop: 10
     },
     gambar: {
-        width: responsiveWidth(46),
-        height: responsiveHeight(46),
+        width: responsiveWidth(70),
+        height: responsiveHeight(70),
         resizeMode: 'contain'
     },
     tanggal: {
@@ -93,7 +91,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row'
     },
     label: {
-        flex:1
+        flex: 1
     },
     orange: {
         fontSize: 14,
