@@ -13,7 +13,7 @@ const CardKeranjang = ({ keranjang }) => {
         <Text style={styles.nama}>{keranjang.product.nama}</Text>
         <Text style={styles.text}>Rp. {numberWithCommas(keranjang.product.harga)}</Text>
 
-        <Jarak height={responsiveHeight(14)}></Jarak>
+        <Jarak height={responsiveHeight(14)}/>
 
         <Text style={styles.textBold}>Pesan : {keranjang.jumlahPesan}</Text>
         <Text style={styles.textBold}>Total harga: Rp. {numberWithCommas(keranjang.totalHarga)}</Text>
