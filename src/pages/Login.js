@@ -6,6 +6,7 @@ import {
   TextInput,
   Pressable,
   Image,
+  ScrollView,
 } from 'react-native';
 import {responsiveHeight, responsiveWidth} from '../utils';
 import MyImage from '../assets/images/logo.png';
@@ -13,9 +14,9 @@ import MyImage from '../assets/images/logo.png';
 export default class Login extends Component {
   render() {
     return (
-      <View>
+      <ScrollView>
         <Image source={MyImage} style={stylesLogin.image} />
-        <Text style={stylesLogin.text}>KantinKu</Text>
+        <Text style={stylesLogin.text}>Kantinku</Text>
         <View style={stylesLogin.view}>
           <Text style={stylesLogin.text1}>Email :</Text>
           <TextInput style={stylesLogin.input} />
@@ -38,7 +39,7 @@ export default class Login extends Component {
             <Text style={stylesLogin.text5}>Klik Untuk Daftar</Text>
           </Pressable>
         </View>
-      </View>
+      </ScrollView>
     );
   }
 }
@@ -47,11 +48,13 @@ const stylesLogin = StyleSheet.create({
   image: {
     width: responsiveWidth(96),
     height: responsiveHeight(96),
-    marginLeft: 150,
+    // marginLeft: 150,
+    alignSelf: 'center',
     marginTop: 20,
   },
   text: {
-    marginLeft: responsiveWidth(129),
+    // marginLeft: responsiveWidth(129),
+    alignSelf: 'center',
     fontSize: 36,
     fontWeight: 'bold',
     color: '#FFA500',

@@ -22,8 +22,7 @@ export default class Keranjang extends Component {
             <Text style={styles.textBold}>Total Harga :</Text>
             <Text style={styles.textBold}>Rp : {numberWithCommas(pesanan.totalHarga)}</Text>
           </View>
-          <Tombol title="Beli" type="textIcon" fontsize={18} padding={responsiveHeight(15)} icon="shoppingcart-aktif">
-          </Tombol>
+          <Tombol title="Beli" type="textIcon" fontsize={18} padding={responsiveHeight(15)} icon="shoppingcart-aktif" onPress={() => this.props.navigation.navigate('Checkout')}/>
         </View>
       </View>
     )
