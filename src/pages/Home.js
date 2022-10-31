@@ -9,33 +9,37 @@ import {
   Tombol,
 } from '../components';
 import {colors, fonts} from '../utils';
-import {dummyKategori, dummyMenu} from '../data';
+import { connect } from 'react-redux';
+import { getListKategori } from '../actions/KategoriAction';
+import { limitMenu } from '../actions/MenuAction';
 
-export default class Home extends Component {
-  constructor(props) {
-    super(props);
+class Home extends Component {
 
-    this.state = {
-      kategori: dummyKategori,
-      menus: dummyMenu,
-    };
+  componentDidMount() {
+    this._unsubscribe = this.props.navigation.addListener('focus', () => {
+      this.props.dispatch(getListKategori());
+      this.props.dispatch(limitMenu());
+    });
+  }
+
+  componentWillUnmount() {
+    this._unsubscribe();
   }
 
   render() {
-    const {kategori, menus} = this.state;
     const {navigation} = this.props;
     return (
       <View style={styles.page}>
-        <HeaderComponent navigation={navigation} />
+        <HeaderComponent navigation={navigation} page="Home"/>
         <ScrollView>
           <BannerSlider />
           <View style={styles.pilihKategori}>
             <Text style={styles.label}>Pilih Kategori</Text>
-            <ListKategori kategori={kategori} />
+            <ListKategori navigation={navigation}/>
           </View>
           <View style={styles.pilihMenu}>
-            <Text style={styles.label}>Menu Rekomendasi</Text>
-            <ListMenu menus={menus} navigation={navigation} />
+            <Text style={styles.label}>Menu Terbaru</Text>
+            <ListMenu navigation={navigation} />
 
             <Tombol
               title="Lihat Semua"
@@ -51,6 +55,8 @@ export default class Home extends Component {
     );
   }
 }
+
+export default connect()(Home)
 
 const styles = StyleSheet.create({
   page: {

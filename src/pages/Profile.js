@@ -1,29 +1,54 @@
 import {Text, StyleSheet, Image, View} from 'react-native';
 import React, {Component} from 'react';
-import {colors, fonts, responsiveHeight, responsiveWidth} from '../utils';
+import {colors, fonts, getData, responsiveHeight, responsiveWidth} from '../utils';
 import {dummyProfile, dummyMenuProfile} from '../data';
 import {RFValue} from 'react-native-responsive-fontsize';
 import {heightMobileUI} from '../utils/constant';
 import {ListMenuProfile} from '../components';
+import { DefaultImage } from '../assets';
 
 export default class Profile extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      profile: dummyProfile,
+      profile: false,
       menus: dummyMenuProfile,
     };
+  }
+
+  componentDidMount() {
+    this._unsubscribe = this.props.navigation.addListener('focus', () => {
+      this.getUserData();
+    });
+  }
+
+  componentWillUnmount() {
+    this._unsubscribe();
+  }
+
+  getUserData = () => {
+    getData('user').then(res => {
+      const data = res
+
+      if(data) {
+        this.setState({
+          profile: data
+        })
+      }else {
+        this.props.navigation.replace('Login')
+      }
+    })
   }
   render() {
     const {profile, menus} = this.state;
     return (
       <View style={styles.page}>
         <View style={styles.container}>
-          <Image source={profile.avatar} style={styles.foto} />
+          <Image source={profile.avatar ? {uri: profile.avatar} : DefaultImage} style={styles.foto} />
           <View style={styles.profile}>
             <Text style={styles.nama}>{profile.nama}</Text>
-            <Text style={styles.Hp}>No. HP : {profile.nomerHP}</Text>
+            <Text style={styles.Hp}>No. HP : {profile.nohp}</Text>
           </View>
           <ListMenuProfile menus={menus} navigation={this.props.navigation} />
         </View>

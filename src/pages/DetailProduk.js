@@ -1,44 +1,92 @@
-import { Text, StyleSheet, Image, View } from 'react-native'
+import { Text, StyleSheet, Image, View, Alert } from 'react-native'
 import React, { Component } from 'react'
-import { colors, fonts, responsiveHeight, numberWithCommas, heightMobileUI, responsiveWidth } from '../utils'
+import { colors, fonts, responsiveHeight, numberWithCommas, heightMobileUI, responsiveWidth, getData } from '../utils'
 import { Inputan, Jarak, Tombol } from '../components'
 import { RFValue } from 'react-native-responsive-fontsize'
+import { connect } from 'react-redux'
+import { masukKeranjang } from '../actions/KeranjangAction'
 
-export default class DetailProduk extends Component {
+class DetailProduk extends Component {
   constructor(props) {
     super(props)
 
     this.state = {
       menu: this.props.route.params.menu,
-      images: this.props.route.params.menu.gambar,
       deskripsi: this.props.route.params.menu.deskripsi,
+      jumlahPesanan: "",
+      keteranganPesanan: "",
+      uid: "",
     }
   }
+
+  componentDidUpdate(prevProps) {
+    const { saveKeranjangResult } = this.props
+
+    if(saveKeranjangResult && prevProps.saveKeranjangResult !== saveKeranjangResult) {
+      this.props.navigation.navigate("Keranjang")
+    }
+
+  }
+
+  inputKeranjang = () => {
+    const { jumlahPesanan, keteranganPesanan } = this.state
+
+    getData('user').then((res) => {
+
+      if (res) {
+
+        this.setState({
+          uid: res.uid
+        })
+
+        if (jumlahPesanan && keteranganPesanan) {
+          this.props.dispatch(masukKeranjang(this.state))
+        } else {
+          Alert.alert('Error', 'Jumlah dan Keterangan Wajib Diisi')
+        }
+
+      } else {
+        Alert.alert('Error', 'Silahkan Login Terlebih Dahulu')
+        this.props.navigation.replace('Login')
+      }
+    })
+  }
+
   render() {
-    const { navigation } = this.props
-    const { menu, images } = this.state
+    const { navigation, saveKeranjangLoading } = this.props
+    const { menu, jumlahPesanan, keteranganPesanan } = this.state
     return (
       <View style={styles.page}>
         <View style={styles.button}>
           <Tombol icon="arrow-left" padding={7} onPress={() => navigation.goBack()} />
         </View>
-        <Image source={menu.gambar} style={styles.gambar} />
+        <Image source={{ uri: menu.gambarMenu }} style={styles.gambar} />
         <View style={styles.container}>
           <View style={styles.desc}>
-            <Text style={styles.nama}>{menu.nama}</Text>
-            <Text style={styles.harga}>Harga : Rp. {numberWithCommas(menu.harga)}</Text>
+            <Text style={styles.nama}>{menu.namaMenu}</Text>
+            <Text style={styles.harga}>Harga : Rp. {numberWithCommas(menu.harga)} </Text>
             <View style={styles.garis} />
             <Text style={styles.deskripsi}>{menu.deskripsi}</Text>
-            <Inputan label="Jumlah" width={responsiveWidth(166)} height={responsiveHeight(33)} fontSize={13}/>
-            <Inputan textarea label="Keterangan" fontSize={13} placeholder="Isi jika ingin custom pesanan"/>
-            <Jarak height={10}/>
-            <Tombol title="Masuk Keranjang" type="textIcon" icon="shoppingcart-aktif" padding={responsiveHeight(12)} fontSize={16}/>
+            <Inputan label="Jumlah" width={responsiveWidth(166)} height={responsiveHeight(33)} fontSize={13} value={jumlahPesanan} onChangeText={(jumlahPesanan) => this.setState({ jumlahPesanan })} keyboardType="number-pad" />
+            <Inputan textarea label="Keterangan" fontSize={13} placeholder="Isi jika ingin custom pesanan" value={keteranganPesanan} onChangeText={(keteranganPesanan) => this.setState({ keteranganPesanan })} />
+            <Jarak height={10} />
+            <Tombol title="Masuk Keranjang" type="textIcon" icon="shoppingcart-aktif" padding={responsiveHeight(12)} fontSize={16} onPress={() => this.inputKeranjang()} loading={saveKeranjangLoading}/>
+            <Jarak height={10} />
           </View>
         </View>
       </View>
     );
   }
 }
+
+const mapStateToProps = (state) => ({
+  saveKeranjangLoading: state.KeranjangReducer.saveKeranjangLoading,
+  saveKeranjangResult: state.KeranjangReducer.saveKeranjangResult,
+  saveKeranjangError: state.KeranjangReducer.saveKeranjangError,
+})
+
+export default connect(mapStateToProps, null)(DetailProduk);
+
 const styles = StyleSheet.create({
   page: {
     flex: 1,
@@ -47,11 +95,12 @@ const styles = StyleSheet.create({
   container: {
     position: 'absolute',
     bottom: 0,
-    height: responsiveHeight(493),
+    height: responsiveHeight(530),
     width: '100%',
     backgroundColor: colors.white,
     borderTopRightRadius: 40,
-    borderTopLeftRadius: 40
+    borderTopLeftRadius: 40,
+    // marginBottom: 40,
   },
   button: {
     position: 'absolute',

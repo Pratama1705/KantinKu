@@ -1,9 +1,8 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {Home, Splash, Menu, Profile, DetailProduk, Login, Keranjang, EditProfile, ChangePassword, HistoryPemesanan} from '../pages';
+import {Home, Splash, Menu, Profile, DetailProduk, Login, Keranjang, EditProfile, ChangePassword, HistoryPemesanan, Checkout, Register} from '../pages';
 import {BottomNavigator} from '../components';
-import Register from './../pages/Register';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -68,6 +67,11 @@ const Router = () => {
         name="HistoryPemesanan"
         component={HistoryPemesanan}
         options={{title: "History Pemesanan"}}
+      />
+      <Stack.Screen
+        name="Checkout"
+        component={Checkout}
+        options={{title: "Check Out"}}
       />
     </Stack.Navigator>
   );
