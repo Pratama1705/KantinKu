@@ -1,20 +1,36 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { ActivityIndicator, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { CardMenu } from '../kecil'
+import { connect } from 'react-redux'
+import { colors } from '../../utils'
 
-const ListMenu = ({ menus, navigation }) => {
+const ListMenu = ({ getListMenuLoading, getListMenuResult, getListMenuError, navigation }) => {
   return (
     <View style={styles.container}>
-      {menus.map((menu) => {
-        return (
-          <CardMenu key={menu.id} menu={menu} navigation={navigation}/>
-        )
-      })}
+      {getListMenuResult ? (
+        Object.keys(getListMenuResult).map((key) => {
+          return <CardMenu menu={getListMenuResult[key]} key={key} navigation={navigation} />;
+        })
+      ) : getListMenuLoading ? (
+        <View style={styles.loading}>
+            <ActivityIndicator color={colors.primary} />
+        </View>
+      ) : getListMenuError ? (
+        <Text>{getListMenuError}</Text>
+      ) :(
+        <Text>Data Kosong</Text>
+      )}
     </View>
   )
 }
 
-export default ListMenu
+const mapStateToProps = (state) => ({
+  getListMenuLoading: state.MenuReducer.getListMenuLoading,
+  getListMenuResult: state.MenuReducer.getListMenuResult,
+  getListMenuError: state.MenuReducer.getListMenuError,
+});
+
+export default connect(mapStateToProps, null)(ListMenu)
 
 const styles = StyleSheet.create({
   container: {
@@ -22,5 +38,10 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     justifyContent: 'space-between',
     marginTop: 10
+  },
+  loading: {
+    flex: 1,
+    marginTop: 10,
+    marginBottom: 30
   }
 })

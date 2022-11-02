@@ -1,0 +1,86 @@
+{
+  "menu" : {
+    "-MKQAIIU1ZQIL5ZHEqFE" : {
+      "namaMenu" : "Soto Mie",
+      "gambarMenu" : "https://firebasestorage.googleapis.com/v0/b/kantinku-2f478.appspot.com/o/menu%2FSotoMie.png?alt=media&token=1d0fbbd8-bcc9-469b-bfab-a3ce992d45e4",
+      "harga" : "15000",
+      "deskripsi" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam et rhoncus elit. Praesent eu lobortis lectus, sit amet ultrices sem. Phasellus accumsan tellus vel ipsum euismod iaculis. Ut hendrerit, purus id pretium faucibus, diam lorem scelerisque sem, nec porttitor puru",
+      "kategori" : "-MKKwigoURfIh8-l1jie",
+      "statusMenu" : true
+    },
+    "-MKQARaiDnX5T4EsfneX" : {
+      "namaMenu" : "Ramen",
+      "gambarMenu" : "https://firebasestorage.googleapis.com/v0/b/kantinku-2f478.appspot.com/o/menu%2FRamen.png?alt=media&token=ed7a8feb-8275-44d1-8d34-e62a8ac6f9c3",
+      "harga" : "20000",
+      "deskripsi" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam et rhoncus elit. Praesent eu lobortis lectus, sit amet ultrices sem. Phasellus accumsan tellus vel ipsum euismod iaculis. Ut hendrerit, purus id pretium faucibus, diam lorem scelerisque sem, nec porttitor puru",
+      "kategori" : "-MKKwigoURfIh8-l1jie",
+      "statusMenu" : true
+    },
+    "-MKZQdJadnKhlX0jAHT8" : {
+      "namaMenu" : "Nasi Padang",
+      "gambarMenu" : "https://firebasestorage.googleapis.com/v0/b/kantinku-2f478.appspot.com/o/menu%2FNasiPadang.png?alt=media&token=71b2de8a-a87f-4048-952d-6f8095f506ed",
+      "harga" : "25000",
+      "deskripsi" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam et rhoncus elit. Praesent eu lobortis lectus, sit amet ultrices sem. Phasellus accumsan tellus vel ipsum euismod iaculis. Ut hendrerit, purus id pretium faucibus, diam lorem scelerisque sem, nec porttitor puru",
+      "kategori" : "-MKKtTxsG58wrXrDIrAV",
+      "statusMenu" : true
+    },
+    "-MKZWGPpxitfyybJK1PL" : {
+      "namaMenu" : "Paket Nasi Ayam",
+      "gambarMenu" : "https://firebasestorage.googleapis.com/v0/b/kantinku-2f478.appspot.com/o/menu%2FPaketNasiAyam.png?alt=media&token=33cfe94e-6dc8-4e74-a24c-6b7f47eb9c60",
+      "harga" : "15000",
+      "deskripsi" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam et rhoncus elit. Praesent eu lobortis lectus, sit amet ultrices sem. Phasellus accumsan tellus vel ipsum euismod iaculis. Ut hendrerit, purus id pretium faucibus, diam lorem scelerisque sem, nec porttitor puru",
+      "kategori" : "-MKKtTxsG58wrXrDIrAV",
+      "statusMenu" : true
+    },
+    "-MKZWSbc2Gd_Z1ZmIYyv" : {
+      "namaMenu" : "Teh Pucuk",
+      "gambarMenu" : "https://firebasestorage.googleapis.com/v0/b/kantinku-2f478.appspot.com/o/menu%2FTehPucuk.png?alt=media&token=335d91ca-13e3-4179-b95f-cb379b85c5d7",
+      "harga" : "5000",
+      "deskripsi" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam et rhoncus elit. Praesent eu lobortis lectus, sit amet ultrices sem. Phasellus accumsan tellus vel ipsum euismod iaculis. Ut hendrerit, purus id pretium faucibus, diam lorem scelerisque sem, nec porttitor puru",
+      "kategori" : "-MKNsDUz1Xf74q0PWFf9",
+      "statusMenu" : true
+    },
+    "-MKiMZO3hyPdSCHPZkw4" : {
+      "namaMenu" : "Good Day",
+      "gambarMenu" : "https://firebasestorage.googleapis.com/v0/b/kantinku-2f478.appspot.com/o/menu%2FGoodDay.png?alt=media&token=1149acbe-5471-4b1a-949b-8acc71737c50",
+      "harga" : "5000",
+      "deskripsi" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam et rhoncus elit. Praesent eu lobortis lectus, sit amet ultrices sem. Phasellus accumsan tellus vel ipsum euismod iaculis. Ut hendrerit, purus id pretium faucibus, diam lorem scelerisque sem, nec porttitor puru",
+      "kategori" : "-MKNsDUz1Xf74q0PWFf9",
+      "statusMenu" : true
+    },
+    "-MKiMo58Dv77kTGoq0TJ" : {
+      "namaMenu" : "Lays",
+      "gambarMenu" : "https://firebasestorage.googleapis.com/v0/b/kantinku-2f478.appspot.com/o/menu%2FLays.png?alt=media&token=08159ed8-07da-47fd-9be0-a836325c9329",
+      "harga" : "5000",
+      "deskripsi" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam et rhoncus elit. Praesent eu lobortis lectus, sit amet ultrices sem. Phasellus accumsan tellus vel ipsum euismod iaculis. Ut hendrerit, purus id pretium faucibus, diam lorem scelerisque sem, nec porttitor puru",
+      "kategori" : "-MKKx7xcV0S6Rf1cZkE5",
+      "statusMenu" : true
+    },
+    "-MKiO-Q8bVkkL51g-YH3" : {
+      "namaMenu" : "Snickers",
+      "gambarMenu" : "https://firebasestorage.googleapis.com/v0/b/kantinku-2f478.appspot.com/o/menu%2FSnickers.png?alt=media&token=dc3b0c99-4015-4ffe-92b3-d400f1d88699",
+      "harga" : "2000",
+      "deskripsi" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam et rhoncus elit. Praesent eu lobortis lectus, sit amet ultrices sem. Phasellus accumsan tellus vel ipsum euismod iaculis. Ut hendrerit, purus id pretium faucibus, diam lorem scelerisque sem, nec porttitor puru",
+      "kategori" : "-MKKx7xcV0S6Rf1cZkE5",
+      "statusMenu" : true
+    }
+  },
+  "kategori" : {
+    "-MKKtTxsG58wrXrDIrAV" : {
+      "gambarKategori" : "https://firebasestorage.googleapis.com/v0/b/kantinku-2f478.appspot.com/o/kategori%2Fnasi.png?alt=media&token=10968ae3-f78a-4f73-8ffa-5b7db70b0aa1",
+      "namaKategori" : "Nasi"
+    },
+    "-MKKwigoURfIh8-l1jie" : {
+      "gambarKategori" : "https://firebasestorage.googleapis.com/v0/b/kantinku-2f478.appspot.com/o/kategori%2Fmie.png?alt=media&token=c6310a7b-ea9f-4f07-be80-8297324607a3",
+      "namaKategori" : "Mie"
+    },
+    "-MKKx7xcV0S6Rf1cZkE5" : {
+      "gambarKategori" : "https://firebasestorage.googleapis.com/v0/b/kantinku-2f478.appspot.com/o/kategori%2Fsnack.png?alt=media&token=d19b61b5-ddaa-4bfa-9b46-a9a7af0cf294",
+      "namaKategori" : "Snack"
+    },
+    "-MKNsDUz1Xf74q0PWFf9" : {
+      "gambarKategori" : "https://firebasestorage.googleapis.com/v0/b/kantinku-2f478.appspot.com/o/kategori%2Fminuman.png?alt=media&token=49548584-0deb-4813-942e-8457f8f9a6ba",
+      "namaKategori" : "Minuman"
+    }
+  }
+}

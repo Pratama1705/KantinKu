@@ -1,16 +1,26 @@
 import { StyleSheet, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { colors, responsiveHeight, responsiveWidth } from '../../utils'
+import { connect } from 'react-redux'
+import { getMenuByKategori } from '../../actions/MenuAction'
 
-const CardKategori = ({ kat }) => {
+const CardKategori = ({ kategori, navigation, id, dispatch }) => {
+    // console.log("Liga : ", id)
+    const toMenuByKategori = (id, namaKategori) => {
+        // ke Menu Action
+        dispatch(getMenuByKategori(id, namaKategori));
+        // navigate ke Menu
+        navigation.navigate('Menu');
+    };
+
     return (
-        <TouchableOpacity style={styles.container}>
-            <Image source={kat.gambar} style={styles.logo} />
+        <TouchableOpacity style={styles.container} onPress={() => toMenuByKategori(id, kategori.namaKategori)}>
+            <Image source={{uri: kategori.gambarKategori}} style={styles.logo} />
         </TouchableOpacity>
     )
 }
 
-export default CardKategori
+export default connect()(CardKategori);
 
 const styles = StyleSheet.create({
     container: {
@@ -28,7 +38,7 @@ const styles = StyleSheet.create({
         borderRadius: 15,
     },
     logo: {
-        width: responsiveWidth(57),
-        height: responsiveHeight(70),
+        width: responsiveHeight(65),
+        height: responsiveHeight(65),
     }
 })

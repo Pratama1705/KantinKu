@@ -3,7 +3,7 @@ import React from 'react'
 import { IconBack, IconKeranjang, IconKeranjangAktif, IconSubmit } from '../../../assets'
 import { colors, fonts } from '../../../utils'
 
-const TextIcon = ({ icon, padding, onPress, title, fontSize }) => {
+const TextIcon = ({ icon, padding, onPress, title, fontSize, disabled }) => {
 
     const Icon = () => {
         if (icon === 'keranjang') {
@@ -19,7 +19,7 @@ const TextIcon = ({ icon, padding, onPress, title, fontSize }) => {
     }
 
     return (
-        <TouchableOpacity style={styles.container(padding)} onPress={onPress}>
+        <TouchableOpacity style={styles.container(padding, disabled)} onPress={onPress}>
             <Icon />
             <Text style={styles.title(fontSize)}>{title}</Text>
         </TouchableOpacity>
@@ -29,8 +29,8 @@ const TextIcon = ({ icon, padding, onPress, title, fontSize }) => {
 export default TextIcon
 
 const styles = StyleSheet.create({
-    container: (padding) => ({
-        backgroundColor: colors.primary,
+    container: (padding, disabled) => ({
+        backgroundColor: disabled ? colors.border : colors.primary,
         padding: padding,
         borderRadius: 5,
         flexDirection: 'row',

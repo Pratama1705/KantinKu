@@ -1,56 +1,62 @@
-import { StyleSheet, Text, View, Image } from 'react-native'
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { colors, fonts, numberWithCommas, responsiveHeight, responsiveWidth } from '../../utils'
 import { IconSampah } from '../../assets'
 import Jarak from './Jarak'
+import { connect } from 'react-redux'
+import { deleteKeranjang } from '../../actions/KeranjangAction'
 
-const CardKeranjang = ({ keranjang }) => {
+const CardKeranjang = ({ keranjang, keranjangUtama, id, dispatch }) => {
+  // console.log("keranjang", keranjang)
+  const hapusKeranjang = () => {
+    dispatch(deleteKeranjang(id, keranjangUtama, keranjang))
+  }
+  
   return (
     <View style={styles.container}>
-      <Image source={keranjang.product.gambar} style={styles.gambar} />
-      
+      <Image source={{uri : keranjang.menu.gambarMenu}} style={styles.gambar} />
+      <Jarak width={responsiveWidth(14)} />
+
       <View style={styles.deskripsi}>
-        <Text style={styles.nama}>{keranjang.product.nama}</Text>
-        <Text style={styles.text}>Rp. {numberWithCommas(keranjang.product.harga)}</Text>
+        <Text style={styles.nama}>{keranjang.menu.namaMenu}</Text>
+        <Text style={styles.text}>Rp. {numberWithCommas(keranjang.menu.harga)}</Text>
 
-        <Jarak height={responsiveHeight(14)}/>
+        <Jarak height={responsiveHeight(14)} />
 
-        <Text style={styles.textBold}>Pesan : {keranjang.jumlahPesan}</Text>
-        <Text style={styles.textBold}>Total harga: Rp. {numberWithCommas(keranjang.totalHarga)}</Text>
+        <Text style={styles.textBold}>Pesan : <Text style={styles.text}>{keranjang.jumlahPesanan}</Text></Text>
+        <Text style={styles.textBold}>Total harga: <Text style={styles.text}>Rp. {numberWithCommas(keranjang.totalHargaPesanan)}</Text></Text>
         <Text style={styles.textBold}>Keterangan:</Text>
-        <Text style={styles.textBold}>{keranjang.keterangan}</Text>
+        <Text style={styles.text}>{keranjang.keteranganPesanan}</Text>
       </View>
-      
-      <View style={styles.sampah}>
+
+      <TouchableOpacity style={styles.sampah} onPress={() => hapusKeranjang()}>
         <IconSampah />
-      </View>
+      </TouchableOpacity>
     </View>
   )
 }
 
-export default CardKeranjang
+export default connect()(CardKeranjang)
 
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     marginTop: 15,
-    backgroundCoolor: colors.white,
+    backgroundColor: colors.white,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
-      height: 2
+      height: 2,
     },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
-
     elevation: 5,
     marginHorizontal: 30,
+    borderRadius: 10,
+    alignItems: 'center',
     paddingVertical: 10,
     paddingHorizontal: 15,
-    borderRadius: 10,
-    alignItems: 'center'
   },
-
   gambar: {
     width: responsiveWidth(77),
     height: responsiveHeight(88),

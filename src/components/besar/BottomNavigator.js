@@ -1,10 +1,12 @@
 import React from 'react'
 import { View, StyleSheet} from 'react-native';
+import { connect } from 'react-redux';
+import { deleteParameterMenu } from '../../actions/MenuAction';
 import { colors } from '../../utils';
 import TabItem from './TabItem';
 
 
-const BottomNavigator = ({ state, descriptors, navigation }) => {
+const BottomNavigator = ({ state, descriptors, navigation, dispatch }) => {
   const focusedOptions = descriptors[state.routes[state.index].key].options;
 
   if (focusedOptions.tabBarVisible === false) {
@@ -35,6 +37,10 @@ const BottomNavigator = ({ state, descriptors, navigation }) => {
             // The `merge: true` option makes sure that the params inside the tab screen are preserved
             navigation.navigate({ name: route.name, merge: true });
           }
+
+          if(route.name !== 'Menu') {
+            dispatch(deleteParameterMenu());
+          }
         };
 
         const onLongPress = () => {
@@ -52,7 +58,7 @@ const BottomNavigator = ({ state, descriptors, navigation }) => {
   );
 }
 
-export default BottomNavigator
+export default connect()(BottomNavigator);
 
 const styles = StyleSheet.create({
   container: {

@@ -2,34 +2,54 @@ import { Text, StyleSheet, View, ScrollView } from 'react-native';
 import React, { Component } from 'react';
 import { HeaderComponent, ListKategori, ListMenu, Jarak, Tombol } from '../components';
 import { colors, fonts } from '../utils';
-import { dummyKategori, dummyMenu } from '../data';
+import { connect } from 'react-redux';
+import { getListMenu } from '../actions/MenuAction';
+import { getListKategori } from '../actions/KategoriAction';
 
-export default class Menu extends Component {
+class Menu extends Component {
 
-  constructor(props) {
-    super(props)
+  componentDidMount() {
+    this._unsubscribe = this.props.navigation.addListener('focus', () => {
+      const { idKategori, keyword } = this.props;
+      this.props.dispatch(getListKategori());
+      this.props.dispatch(getListMenu(idKategori, keyword));
+    });
+  }
 
-    this.state = {
-      kategori: dummyKategori,
-      menus: dummyMenu
+  componentWillUnmount() {
+    this._unsubscribe();
+  }
+
+  componentDidUpdate(prevProps) {
+    const { idKategori, keyword } = this.props
+
+    if (idKategori && prevProps.idKategori !== idKategori) {
+      this.props.dispatch(getListMenu(idKategori, keyword));
+    }
+
+    if (keyword && prevProps.keyword !== keyword) {
+      this.props.dispatch(getListMenu(idKategori, keyword));
     }
   }
 
   render() {
-    const { kategori, menus } = this.state
-    const { navigation } = this.props
+    const { navigation, namaKategori, keyword } = this.props
 
     return (
       <View style={styles.page}>
-        <HeaderComponent navigation={navigation}/>
+        <HeaderComponent navigation={navigation} page="Menu" />
         <ScrollView>
           <View style={styles.pilihKategori}>
             <Text style={styles.label}>Pilih Kategori</Text>
-            <ListKategori kategori={kategori} />
+            <ListKategori navigation={navigation} />
           </View>
           <View style={styles.pilihMenu}>
-            <Text style={styles.label}>Pilih <Text style={styles.boldLabel}>Menu</Text> Yang Anda Inginkan</Text>
-            <ListMenu menus={menus} navigation={navigation} />
+            {keyword ? <Text style={styles.label}>
+              Cari : <Text style={styles.boldLabel}>{keyword}</Text>
+            </Text> : <Text style={styles.label}>
+              Pilih <Text style={styles.boldLabel}>{namaKategori ? namaKategori : 'Menu'}</Text> Yang Anda Inginkan</Text>}
+
+            <ListMenu navigation={navigation} />
           </View>
 
           <Jarak height={80} />
@@ -38,6 +58,14 @@ export default class Menu extends Component {
     )
   }
 }
+
+const mapStateToProps = (state) => ({
+  idKategori: state.MenuReducer.idKategori,
+  namaKategori: state.MenuReducer.namaKategori,
+  keyword: state.MenuReducer.keyword,
+});
+
+export default connect(mapStateToProps, null)(Menu)
 
 const styles = StyleSheet.create({
   page: {

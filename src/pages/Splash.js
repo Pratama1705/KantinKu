@@ -6,7 +6,7 @@ import {colors} from '../utils';
 export default class Splash extends Component {
   componentDidMount() {
     setTimeout(() => {
-      this.props.navigation.replace('Login');
+      this.props.navigation.replace('MainApp');
     }, 3000);
   }
 
