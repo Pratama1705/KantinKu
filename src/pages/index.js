@@ -10,5 +10,6 @@ import HistoryPemesanan from "./HistoryPemesanan";
 import Keranjang from "./Keranjang";
 import Checkout from "./Checkout";
 import Register from "./Register";
+import Midtrans from "./Midtrans";
 
-export { Home, Splash, Menu, Profile, DetailProduk, Login, Keranjang, EditProfile, ChangePassword, HistoryPemesanan, Checkout, Register}
+export { Home, Splash, Menu, Profile, DetailProduk, Login, Keranjang, EditProfile, ChangePassword, HistoryPemesanan, Checkout, Register, Midtrans}

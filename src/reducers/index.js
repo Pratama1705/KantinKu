@@ -3,7 +3,10 @@ import AuthReducer from './auth';
 import ProfileReducer from './profile';
 import KategoriReducer from './kategori';
 import MenuReducer from './menu';
-import KeranjangReducer from './keranjang'
+import KeranjangReducer from './keranjang';
+import PaymentReducer from './payment';
+import PesananReducer from './pesanan';
+import HistoryReducer from './history';
 
 const rootReducer = combineReducers({
     AuthReducer,
@@ -11,6 +14,9 @@ const rootReducer = combineReducers({
     KategoriReducer,
     MenuReducer,
     KeranjangReducer,
+    PaymentReducer,
+    PesananReducer,
+    HistoryReducer,
 });
 
 export default rootReducer

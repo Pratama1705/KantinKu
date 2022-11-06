@@ -11,7 +11,7 @@ const CardPesanan = ({ pesanan, onPress }) => {
                 return (
                     <View key={key} style={styles.confirm}>
                         <Text style={styles.nama}>{pesanan[key].menu.namaMenu}</Text>
-                        <Text style={styles.textBold}>Pesanan : {pesanan[key].jumlahPesanan}</Text>
+                        <Text style={styles.textBold}>Pesan : {pesanan[key].jumlahPesanan}</Text>
                         <Text style={styles.textBold}>Keterangan : {pesanan[key].keteranganPesanan}</Text>
                         <Text style={styles.textBold}>Harga Pesanan : Rp.{numberWithCommas(pesanan[key].totalHargaPesanan)}</Text>
                     </View>

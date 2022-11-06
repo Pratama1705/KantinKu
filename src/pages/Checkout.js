@@ -1,23 +1,78 @@
 import React, { Component } from 'react';
 import { Text, StyleSheet, View, ScrollView } from 'react-native';
 import { CardPesanan, Jarak, Pilihan, Tombol } from '../components';
-import { colors, fonts, numberWithCommas, responsiveHeight } from '../utils';
-import { dummyPesanan } from '../data';
+import { colors, fonts, getData, numberWithCommas, responsiveHeight } from '../utils';
 import { connect } from 'react-redux';
+import { snapTransactions } from '../actions/PaymentActions';
 
 class Checkout extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
+            profile: false,
             pesanan: this.props.route.params.pesanan,
-            pembayaran: ['Cash', 'Debit Card', 'Qris'],
-            totalHarga: this.props.route.params.totalHarga
+            totalHarga: this.props.route.params.totalHarga,
+            date: new Date().getTime()
         };
     }
 
+    componentDidMount() {
+        this.getUserData();
+    }
+
+    getUserData = () => {
+        getData('user').then((res) => {
+            const data = res;
+
+            if (data) {
+                this.setState({
+                    profile: data
+                })
+            } else {
+                this.props.navigation.replace('Login');
+            }
+        })
+    }
+
+    componentDidUpdate(prevProps) {
+        const { snapTransactionsResult } = this.props;
+
+        if (snapTransactionsResult && prevProps.snapTransactionsResult !== snapTransactionsResult) {
+            // console.log("Hasil : ", snapTransactionsResult)
+            const params = {
+                url: snapTransactionsResult.redirect_url,
+                order_id: "TEST-" + this.state.date + "-" + this.state.profile.uid
+            }
+
+            this.props.navigation.navigate('Midtrans', params);
+
+        }
+    }
+
+    Bayar = () => {
+        const { totalHarga, profile, date } = this.state
+        const data = {
+            transaction_details: {
+                order_id: "TEST-" + date + "-" + profile.uid,
+                gross_amount: parseInt(totalHarga)
+            },
+            credit_card: {
+                secure: true
+            },
+            customer_details: {
+                first_name: profile.nama,
+                email: profile.email,
+                phone: profile.nohp
+            }
+        }
+        // console.log("Data : ", data);
+        this.props.dispatch(snapTransactions(data))
+    }
+
     render() {
-        const { pesanan, pembayaran, totalHarga } = this.state;
+        const { pesanan, totalHarga } = this.state;
+        const { snapTransactionsLoading } = this.props;
         // console.log(pesanan)
         return (
             <View style={styles.pages}>
@@ -26,10 +81,6 @@ class Checkout extends Component {
                         <Text style={styles.textBold}>Apakah Benar Ini Pesanan Anda ?</Text>
                         <Jarak height={15} />
                         <CardPesanan pesanan={pesanan} onPress={() => this.props.navigation.navigate('Keranjang')} />
-
-                        {/* <Pilihan label="Pilih Metode Pembayaran" datas={pembayaran} /> */}
-                        {/* <Jarak height={10} /> */}
-
                     </View>
                 </ScrollView>
 
@@ -49,7 +100,8 @@ class Checkout extends Component {
                         fontSize={18}
                         padding={responsiveHeight(10)}
                         icon="submit"
-                        onPress={() => this.props.navigation.navigate('HistoryPemesanan')}
+                        onPress={() => this.Bayar()}
+                        loading={snapTransactionsLoading}
                     />
                 </View>
             </View>
@@ -57,7 +109,12 @@ class Checkout extends Component {
     }
 }
 
-export default connect()(Checkout)
+const mapStateToProps = (state) => ({
+    snapTransactionsResult: state.PaymentReducer.snapTransactionsResult,
+    snapTransactionsLoading: state.PaymentReducer.snapTransactionsLoading
+});
+
+export default connect(mapStateToProps)(Checkout)
 
 const styles = StyleSheet.create({
     pages: {

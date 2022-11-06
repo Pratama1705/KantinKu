@@ -1,7 +1,7 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {Home, Splash, Menu, Profile, DetailProduk, Login, Keranjang, EditProfile, ChangePassword, HistoryPemesanan, Checkout, Register} from '../pages';
+import {Home, Splash, Menu, Profile, DetailProduk, Login, Keranjang, EditProfile, ChangePassword, HistoryPemesanan, Checkout, Register, Midtrans} from '../pages';
 import {BottomNavigator} from '../components';
 
 const Stack = createNativeStackNavigator();
@@ -72,6 +72,11 @@ const Router = () => {
         name="Checkout"
         component={Checkout}
         options={{title: "Check Out"}}
+      />
+      <Stack.Screen
+        name="Midtrans"
+        component={Midtrans}
+        options={{title: "Lanjutkan Pembayaran"}}
       />
     </Stack.Navigator>
   );
